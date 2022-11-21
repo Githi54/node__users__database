@@ -1,7 +1,7 @@
 'use strict';
 
-import { createFollowers } from './createFollowers';
-import { createRandomUser } from './createRandomUser';
+import { createFollowers } from './createFollowers.js';
+import { createRandomUser } from './createRandomUser.js';
 
 const users = [];
 
