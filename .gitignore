@@ -1,2 +1,2 @@
-node__modules
+/node__modules
 .eslintignore
