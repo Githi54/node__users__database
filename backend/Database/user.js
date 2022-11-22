@@ -22,6 +22,8 @@ const User = sequelize.define('User', {
   }
 }, {
   tableName: 'users',
-  createdAt: false,
-  updatedAt: false
+  createdAt: true,
+  updatedAt: true
 });
+
+User.sync({ force: true });

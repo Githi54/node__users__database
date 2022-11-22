@@ -11,11 +11,5 @@ export const sequelize = new Sequelize(
     port: 5432,
     schema: 'public',
     dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
   }
 );
