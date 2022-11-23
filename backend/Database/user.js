@@ -3,7 +3,7 @@
 import { sequelize } from './db.js';
 import { DataTypes } from 'sequelize';
 
-const User = sequelize.define('User', {
+export const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true
@@ -26,4 +26,4 @@ const User = sequelize.define('User', {
   updatedAt: true
 });
 
-User.sync({ force: true });
+
