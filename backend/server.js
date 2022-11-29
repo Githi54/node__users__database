@@ -1,5 +1,6 @@
 'use strict';
 
+const { Op } = require('sequelize');
 const { User } = require('./Database/user.js');
 
 function createServer() {
@@ -12,20 +13,70 @@ function createServer() {
   app.get('/users', express.json(), async (req, res) => {
     try {
       const users = await User.findAll();
-  
+
       res.send(users);
     } catch (error) {
       res.status(500).json({ error })
     }
   });
 
+  app.get('/:userId/friends', express.json(), async (req, res) => {
+    try {
+      const { userId } = req.params;
+      const user = await User.findOne({
+        where: {
+          id: userId,
+        }
+      });
+
+      const sortCol = req.query.order_by;
+      const sortDir = req.query.order_type;
+
+      if (!user) {
+        res.send(404);
+      }
+
+      const userSubs = user.followersId;
+
+      const userFollowers = await User.findAll({
+        where: {
+          followersId: {
+            [Op.contains]: [`${userId}`]
+          }
+        }
+      });
+
+      const friends = userFollowers.map(user => userSubs.includes(user.id))
+
+      res.send(friends)
+    } catch (error) {
+      res.status(500).json({ error })
+    }
+  })
+
   app.get('/max-following', express.json(), async (req, res) => {
     try {
       const users = await User.findAll({
         order: [['followersId', 'DESC']]
       });
-  
+
       res.send(users.slice(0, 5));
+    } catch (error) {
+      res.status(500).json({ error })
+    }
+  });
+
+  app.get('/not-following', express.json(), async (req, res) => {
+    try {
+      const users = await User.findAll({
+        where: {
+          followersId: {
+            [Op.contains]: ["-1"]
+          }
+        }
+      });
+
+      res.send(users);
     } catch (error) {
       res.status(500).json({ error })
     }
