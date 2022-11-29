@@ -3,9 +3,6 @@ This is a server simulation for a social network. It pulls data from your databa
 # installing project
 1. 
 2. Install all dependencies(use command line):\ 
-```sh
-$ npm i
-``` or ```sh
-$ npm install
-```
+```sh $ npm i``` or ```sh
+$ npm install```
 
