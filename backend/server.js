@@ -29,8 +29,8 @@ function createServer() {
         }
       });
 
-      const sortCol = req.query.order_by;
-      const sortDir = req.query.order_type;
+      const sortCol = req.query.order_by || 'id';
+      const sortDir = req.query.order_type || 'DESC';
 
       if (!user) {
         res.send(404);
@@ -43,12 +43,17 @@ function createServer() {
           followersId: {
             [Op.contains]: [`${userId}`]
           }
-        }
+        },
+        order: [[sortCol, sortDir]]
       });
 
-      const friends = userFollowers.map(user => userSubs.includes(user.id))
+      const friends = userFollowers.filter(user => userSubs.includes(user.id))
+      const friendsInfo = {
+        countOfFriends: friends.length,
+        friends: friends
+      }
 
-      res.send(friends)
+      res.send(friendsInfo)
     } catch (error) {
       res.status(500).json({ error })
     }
