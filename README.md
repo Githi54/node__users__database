@@ -22,7 +22,7 @@ $ npm install
 ```
 
 # If you want connect you database
-1. Open config folder and search ```config.js``` file
+1. Open config folder and search ```config.js``` file <br> <br>
 ![Screenshot_346](https://user-images.githubusercontent.com/104434132/204564989-2fc0be77-f86d-4b71-a730-a886c6094f98.png)
 
 2. Change the fields according to your data
