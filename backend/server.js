@@ -20,7 +20,7 @@ function createServer() {
     }
   });
 
-  app.get('/:userId/friends', express.json(), async (req, res) => {
+  app.get('/users/:userId/friends', express.json(), async (req, res) => {
     try {
       const { userId } = req.params;
       const user = await User.findOne({
