@@ -2,6 +2,7 @@
 
 const { Op } = require('sequelize');
 const { User } = require('./Database/user.js');
+const { sequelize } = require('./models/index.js');
 
 function createServer() {
   const express = require('express');
@@ -12,7 +13,13 @@ function createServer() {
 
   app.get('/users', express.json(), async (req, res) => {
     try {
-      const users = await User.findAll();
+      const users = await User.findAll({
+        where: {
+          followersId: {
+            [Op.ne]: ['-1']
+          }
+        }
+      });
 
       res.send(users);
     } catch (error) {
