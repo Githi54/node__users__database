@@ -2,6 +2,7 @@
 
 const { Op } = require('sequelize');
 const { User } = require('./Database/user.js');
+const { sequelize } = require('./models/index.js');
 
 function createServer() {
   const express = require('express');

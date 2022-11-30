@@ -38,7 +38,8 @@ $ npm install
 1. /users - endpoint for receiving all users (with subscriptions).
 <br> <br>
 
-![Screenshot_347](https://user-images.githubusercontent.com/104434132/204738906-1047e3d5-39a7-4f6b-b60f-fd9e3bfd07b2.png)
+![Screenshot_353](https://user-images.githubusercontent.com/104434132/204756870-722291dd-ecd7-4b02-a856-91be355ebe66.png)
+
 
 2. /users/<id>/friends?order_by=<column_name>&order_type=<DESC_or_ASC> - endpoint to get information about the user with friends and available sorting by the specified field. (for friends we will consider mutual subscription).
 <br> <br>
