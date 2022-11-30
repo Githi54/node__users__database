@@ -33,7 +33,7 @@ $ npm install
 3. Sequelize
 4. Express
 
-#Endpoints
+# Endpoints
 
 1. /users - endpoint for receiving all users (with subscriptions).
 <br> <br>
