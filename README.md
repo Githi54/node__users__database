@@ -1,4 +1,4 @@
-# node__users__database
+# Simple API for social network
 This is a server simulation for a social network. It pulls data from your database and stores it in JSON format. The Faker library was used to create random users
 # installing project
 1. Fork repository
