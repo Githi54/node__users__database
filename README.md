@@ -6,8 +6,9 @@ This is a server simulation for a social network. It pulls data from your databa
 ![Screenshot_344](https://user-images.githubusercontent.com/104434132/204560966-7c698d0e-1c56-423c-b49c-4f50b95a70b6.png)
 
 2. Clone project
+![Screenshot_345](https://user-images.githubusercontent.com/104434132/204563940-4bc19b5d-0b95-4a2c-9292-4e1c59059a0f.png)  
 
-![Screenshot_345](https://user-images.githubusercontent.com/104434132/204563940-4bc19b5d-0b95-4a2c-9292-4e1c59059a0f.png)
+
 
   ```sh
   $ git clone <youre link>
